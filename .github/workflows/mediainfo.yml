@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Clearing cache
@@ -20,7 +20,7 @@ jobs:
       - name: Downloading required packages
         continue-on-error: true
         run: |
-          wget -qq https://mediaarea.net/repo/deb/repo-mediaarea_1.0-16_all.deb && sudo dpkg -i repo-mediaarea_1.0-16_all.deb
+          wget -qq https://mediaarea.net/repo/deb/repo-mediaarea_1.0-19_all.deb && sudo dpkg -i repo-mediaarea_1.0-19_all.deb
           sudo apt-get update && sudo apt-get install --download-only -y libmms0 mediainfo libzen0v5
           mkdir -p tempx vendor
           sudo mv /var/cache/apt/archives/*deb tempx
@@ -36,6 +36,6 @@ jobs:
       - name: Compressing Output
         continue-on-error: true
         run: |
-          tar -zcvf mediainfo_20.09.tar.gz vendor
-          curl --upload-file ./mediainfo_20.09.tar.gz https://transfer.sh/mediainfo_20.09.tar.gz
+          tar -zcvf mediainfo_21.09.tar.gz vendor
+          curl --upload-file ./mediainfo_21.09.tar.gz https://transfer.sh/mediainfo_21.09.tar.gz
           echo "    Done."
