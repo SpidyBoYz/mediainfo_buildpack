@@ -36,6 +36,6 @@ jobs:
       - name: Compressing Output
         continue-on-error: true
         run: |
-          tar -zcvf mediainfo_21.09.tar.gz vendor
-          curl --upload-file ./mediainfo_21.09.tar.gz https://transfer.sh/mediainfo_21.09.tar.gz
+          tar -zcvf mediainfo_22.05.tar.gz vendor
+          curl --upload-file ./mediainfo_22.05.tar.gz https://transfer.sh/mediainfo_22.05.tar.gz
           echo "    Done."
