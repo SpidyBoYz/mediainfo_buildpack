@@ -3,7 +3,7 @@
 set -eo pipefail
 
 BUILD_DIR=$1
-MEDIAINFO_VER="21.09"
+MEDIAINFO_VER="22.05"
 
 disp() {
   echo "-----> $*"
