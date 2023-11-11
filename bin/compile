@@ -3,7 +3,7 @@
 set -eo pipefail
 
 BUILD_DIR=$1
-MEDIAINFO_VER="22.05"
+MEDIAINFO_VER="23.10"
 
 disp() {
   echo "-----> $*"
@@ -15,7 +15,7 @@ indent() {
 
 disp "Unpacking mediainfo"
 cd $BUILD_DIR
-curl -fsSL "https://github.com/dishapatel010/mediainfo_buildpack/raw/master/mediainfo_${MEDIAINFO_VER}.tar.gz" | tar xzf - | indent
+curl -fsSL "https://github.com/MediaArea/MediaInfo/archive/refs/tags/v${MEDIAINFO_VER}.tar.gz" | tar xzf - | indent
 
 disp "Creating PROFILE_PATH"
 PROFILE_PATH="$BUILD_DIR/.profile.d"
